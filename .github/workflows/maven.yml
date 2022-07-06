@@ -1,0 +1,31 @@
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+env:
+  IOS_PERSONAL: 00000000000
+  ANDROID_PERSONAL: 00000000000
+  XCODE_ORG_ID: 00000000000
+
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up JDK 8
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'adopt'
+        cache: maven
+    - name: Build with Maven
+      run: mvn clean install -DskipTests=true
+

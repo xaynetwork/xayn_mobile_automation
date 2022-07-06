@@ -1,0 +1,11 @@
+#folders
+/.idea/
+app/android/*
+app/ios/*
+*/target/*
+
+allure-results/*
+!categories.json
+!environment.properties
+#files
+.DS_Store
