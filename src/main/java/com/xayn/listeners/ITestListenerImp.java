@@ -2,9 +2,9 @@ package com.xayn.listeners;
 
 import com.xayn.annotations.TMS;
 import com.xayn.configuration.Configuration;
-import com.xayn.handlers.TestRailHandler;
 import com.xayn.constants.TestStatus;
 import com.xayn.handlers.AppiumHandler;
+import com.xayn.handlers.TestRailHandler;
 import io.qameta.allure.Attachment;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.OutputType;
@@ -20,7 +20,7 @@ import java.io.File;
 import java.io.IOException;
 
 @Log4j2
-public class TestListener implements ITestListener {
+public class ITestListenerImp implements ITestListener {
 
     @Override
     public void onStart(ITestContext context) {

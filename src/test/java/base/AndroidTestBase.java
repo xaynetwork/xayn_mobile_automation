@@ -17,12 +17,13 @@ import static com.xayn.handlers.AppiumHandler.getDriver;
 public abstract class AndroidTestBase extends TestBase {
 
     @BeforeMethod(alwaysRun = true)
-    public void startDriver(Method method) throws IllegalAccessException, InterruptedException {
+    public void startDriver(Method method) throws IllegalAccessException {
         DesiredCapabilities desiredCapabilities = new CapabilitiesBuilder()
                 .setPlatformName("Android")
                 .setPlatformVersion(ANDROID_VERSION)
                 .setDeviceName(ANDROID_DEVICE_ID)
                 .setAutomationName("UiAutomator2")
+                .setFullResetValue(true)
                 .setApp(APP_ANDROID)
                 .build();
         createDriver(PlatformType.ANDROID, desiredCapabilities);

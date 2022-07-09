@@ -2,7 +2,8 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Regression">
     <listeners>
-        <listener class-name="com.xayn.listeners.TestListener"/>
+        <listener class-name="com.xayn.listeners.ITestListenerImp"/>
+        <listener class-name="com.xayn.listeners.AnnotationTransformerImp"/>
     </listeners>
     <test name="Debug">
         <classes>
