@@ -28,6 +28,7 @@ public class Configuration {
     public static final String ANDROID_VERSION;
     public static final String IOS_VERSION;
     public static final String IOS_DEVICE;
+    public static final int RETRY_COUNT;
 
     public static final boolean IS_REGRESSION;
 
@@ -55,6 +56,7 @@ public class Configuration {
         TESTRAIL_ENDPOINT = System.getenv("TESTRAIL_ENDPOINT");
         TESTRAIL_USER = System.getenv("TESTRAIL_USER");
         TESTRAIL_PASSWORD = System.getenv("TESTRAIL_PASSWORD");
+        RETRY_COUNT = Integer.parseInt(props.getProperty("retry.count"));
     }
 
     private Configuration() {
