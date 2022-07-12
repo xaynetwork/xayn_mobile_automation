@@ -7,15 +7,13 @@ import com.xayn.screens.ReaderModeScreen;
 import com.xayn.screens.YourSpaceScreen;
 import com.xayn.screens.components.CreateNewCollectionComponent;
 import com.xayn.screens.components.OnboardingComponent;
-import io.qameta.allure.Description;
 import org.apache.commons.lang3.RandomStringUtils;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CollectionsTestAndroid extends AndroidTestBase {
-    @Test(description = "Checking Bookmarking")
+    @Test(description = "Adding a bookmark to Read Later collection")
     @TMS(id = 41)
-    @Description("Adding a bookmark to Read Later collection")
     public void checkingBookmarking(){
         OnboardingComponent onboarding = new OnboardingComponent().open();
         onboarding.gotItButtonClick();
@@ -34,9 +32,8 @@ public class CollectionsTestAndroid extends AndroidTestBase {
        Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "amount of bookmarks is different from expected");
     }
 
-    @Test(description = "Checking Bookmarking from reading mode")
+    @Test(description = "Adding a bookmark to Read Later collection from reading mode")
     @TMS(id = 42)
-    @Description("Adding a bookmark to Read Later collection from reading mode")
     public void checkingBookmarkingFromReaderMode(){
         OnboardingComponent onboarding = new OnboardingComponent().open();
         onboarding.gotItButtonClick();
@@ -50,9 +47,8 @@ public class CollectionsTestAndroid extends AndroidTestBase {
         Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "amount of bookmarks is different from expected");
     }
 
-    @Test(description = "Checking collections")
+    @Test(description = "Creating new collection")
     @TMS(id = 299)
-    @Description("Creating new collection")
     public void checkingCreatingNewCollection() {
         OnboardingComponent onboarding = new OnboardingComponent().open();
         onboarding.gotItButtonClick();
@@ -65,5 +61,20 @@ public class CollectionsTestAndroid extends AndroidTestBase {
                 .clickCreateButton();
         yourSpaceScreen.clickOnCollection(1);
         Assert.assertTrue(yourSpaceScreen.isNameOfTheCollectionDisplayed(name), "Name of the collection is different");
+    }
+
+    @Test(description = "Giving new collection the name that exceeds character limit of 20")
+    @TMS()
+    public void checkingGivingCollectionLongName() {
+        OnboardingComponent onboarding = new OnboardingComponent().open();
+        onboarding.gotItButtonClick();
+        HomeScreen homeScreen = new HomeScreen().open();
+        YourSpaceScreen yourSpaceScreen = homeScreen.clickOnYourSpace().open();
+        CreateNewCollectionComponent component = yourSpaceScreen.clickPlusIcon().open();
+        String name = RandomStringUtils.random(21, true, true);
+        component
+                .typeCollectionName(name)
+                .clickCreateButton();
+        Assert.assertTrue(yourSpaceScreen.isCollectionNameExceed(), "No warning about collection name");
     }
 }

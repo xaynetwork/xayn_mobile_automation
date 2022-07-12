@@ -45,6 +45,10 @@ public class YourSpaceScreen extends BaseScreen {
     @iOSXCUITFindBy(accessibility = "Contact")
     private MobileElement contactButton;
 
+    @AndroidFindBy(accessibility = "The name can't exceed 20 characters")
+    @iOSXCUITFindBy(accessibility = "The name can't exceed 20 characters")
+    private MobileElement collectionNameExceed;
+
     @Override
     public YourSpaceScreen open() {
         super.openScreen();
@@ -61,7 +65,6 @@ public class YourSpaceScreen extends BaseScreen {
     }
 
     public YourSpaceScreen clickOnCollection(int index) {
-        System.out.println(collections.size());
         click(collections.get(index));
         return this;
     }
@@ -102,4 +105,7 @@ public class YourSpaceScreen extends BaseScreen {
         return AppiumHandler.getDriver().findElementByAccessibilityId(accessibilityId).isDisplayed();
     }
 
+    public boolean isCollectionNameExceed () {
+        return isElementDisplayed(collectionNameExceed);
+    }
 }

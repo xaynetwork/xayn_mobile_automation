@@ -6,14 +6,12 @@ import com.xayn.screens.HomeScreen;
 import com.xayn.screens.ReaderModeScreen;
 import com.xayn.screens.YourSpaceScreen;
 import com.xayn.screens.components.OnboardingComponent;
-import io.qameta.allure.Description;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class CollectionsTestIOS extends IOSTestBase {
-    @Test(description = "Checking Bookmarking")
+    @Test(description = "Adding a bookmark to Read Later collection")
     @TMS(id = 41)
-    @Description("Adding a bookmark to Read Later collection")
     public void checkingBookmarking() {
         OnboardingComponent onboarding = new OnboardingComponent().open();
         onboarding.gotItButtonClick();
@@ -27,9 +25,8 @@ public class CollectionsTestIOS extends IOSTestBase {
         Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "amount of bookmarks is different from expected");
     }
 
-    @Test(description = "Checking Bookmarking from reading mode")
+    @Test(description = "Adding a bookmark to Read Later collection from reading mode")
     @TMS(id = 42)
-    @Description("Adding a bookmark to Read Later collection from reading mode")
     public void checkingBookmarkingFromReaderMode() {
         OnboardingComponent onboarding = new OnboardingComponent().open();
         onboarding.gotItButtonClick();
