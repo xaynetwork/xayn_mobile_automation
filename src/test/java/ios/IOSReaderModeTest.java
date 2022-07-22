@@ -8,7 +8,7 @@ import com.xayn.screens.components.OnboardingComponent;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class ReaderModeTestIOS extends IOSTestBase {
+public class IOSReaderModeTest extends IOSTestBase {
     @Test(description = "Liking an article in reader mode")
     @TMS(id = 22)
     public void checkingLikeInReaderMode() {
@@ -18,7 +18,7 @@ public class ReaderModeTestIOS extends IOSTestBase {
         homeScreen.clickOnScreenCenter();
         ReaderModeScreen readerModeScreen = new ReaderModeScreen().open();
         readerModeScreen.clickLikeButton();
-        Assert.assertTrue(readerModeScreen.isArticleLiked());
+        Assert.assertTrue(readerModeScreen.isArticleLiked(), "Article isn't liked");
     }
 
     @Test(description = "Disliking an article in reader mode")
@@ -30,7 +30,7 @@ public class ReaderModeTestIOS extends IOSTestBase {
         homeScreen.clickOnScreenCenter();
         ReaderModeScreen readerModeScreen = new ReaderModeScreen().open();
         readerModeScreen.clickDislikeButton();
-        Assert.assertTrue(readerModeScreen.isArticleDisliked());
+        Assert.assertTrue(readerModeScreen.isArticleDisliked(), "Article isn't disliked");
     }
 
     @Test(description = "Navigating back from reader mode")
@@ -42,6 +42,6 @@ public class ReaderModeTestIOS extends IOSTestBase {
         homeScreen.clickOnScreenCenter();
         ReaderModeScreen readerModeScreen = new ReaderModeScreen().open();
         readerModeScreen.clickLeftArrow();
-        Assert.assertTrue(homeScreen.isNavBarDisplayed());
+        Assert.assertTrue(homeScreen.isNavBarDisplayed(), "Navbar isn't displayed");
     }
 }

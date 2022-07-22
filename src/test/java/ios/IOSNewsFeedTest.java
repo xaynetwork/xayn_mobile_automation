@@ -8,7 +8,7 @@ import com.xayn.screens.components.OnboardingComponent;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class NewsFeedTestIOS extends IOSTestBase {
+public class IOSNewsFeedTest extends IOSTestBase {
     @Test(description = "Liking an article by swiping it to the right")
     @TMS(id = 2)
     public void checkingLikeBySwipe() {

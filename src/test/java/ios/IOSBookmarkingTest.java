@@ -9,7 +9,7 @@ import com.xayn.screens.components.OnboardingComponent;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class CollectionsTestIOS extends IOSTestBase {
+public class IOSBookmarkingTest extends IOSTestBase {
     @Test(description = "Adding a bookmark to Read Later collection")
     @TMS(id = 41)
     public void checkingBookmarking() {
@@ -22,7 +22,7 @@ public class CollectionsTestIOS extends IOSTestBase {
                 .open();
         yourSpaceScreen.clickOnCollection(0);
         onboarding.gotItButtonClick();
-        Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "amount of bookmarks is different from expected");
+        Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "Amount of bookmarks is different from expected");
     }
 
     @Test(description = "Adding a bookmark to Read Later collection from reading mode")
@@ -38,6 +38,6 @@ public class CollectionsTestIOS extends IOSTestBase {
         YourSpaceScreen yourSpaceScreen = homeScreen.clickOnPersonalArea().open();
         yourSpaceScreen.clickOnCollection(0);
         onboarding.gotItButtonClick();
-        Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "amount of bookmarks is different from expected");
+        Assert.assertEquals(yourSpaceScreen.getAmountOfBookmarks(), 1, "Amount of bookmarks is different from expected");
     }
 }

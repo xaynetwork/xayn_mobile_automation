@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Regression">
+<suite name="Sanity">
     <listeners>
         <listener class-name="com.xayn.listeners.ITestListenerImp"/>
         <listener class-name="com.xayn.listeners.AnnotationTransformerImp"/>
     </listeners>
-    <test name="Regression">
+    <test name="IOS">
         <packages>
-            <!--package name="android.*"/-->
             <package name="ios.*"/>
+        </packages>
+        <!--        <classes>-->
+        <!--            <class name="android.AndroidBookmarkingTest"></class>-->
+        <!--        </classes>-->
+    </test>
+    <test name="Android">
+        <packages>
+            <package name="android.*"/>
         </packages>
     </test>
 </suite>
