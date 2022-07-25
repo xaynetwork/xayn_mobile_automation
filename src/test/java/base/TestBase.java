@@ -24,7 +24,7 @@ abstract class TestBase {
             throw new RuntimeException("An appium server isn't running");
         }
         new File(Configuration.SCREENSHOT_DIRECTORY).mkdir();
-        if (Configuration.IS_REGRESSION) TestRailHandler.createTestRun();
+       // if (Configuration.IS_REGRESSION) TestRailHandler.createTestRun();
 //        for (ITestNGMethod method : context.getAllTestMethods()) {
 //            method.setRetryAnalyzerClass(new RetryAnalyzerImp());
 //        }
