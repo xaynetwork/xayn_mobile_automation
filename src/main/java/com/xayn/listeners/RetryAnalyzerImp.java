@@ -13,7 +13,7 @@ public class RetryAnalyzerImp implements IRetryAnalyzer {
         if(retryCount < maxRetryCount)
         {
             retryCount++;
-            log.warn( "retrying " + result.getMethod() + " for the " + retryCount + " time.." );
+            log.warn( "retrying " + result.getMethod());
             return true;
         }
         return false;

@@ -6,16 +6,17 @@
         <listener class-name="com.xayn.listeners.AnnotationTransformerImp"/>
     </listeners>
     <test name="IOS">
-        <packages>
-            <package name="ios.*"/>
-        </packages>
-        <!--        <classes>-->
-        <!--            <class name="android.AndroidBookmarkingTest"></class>-->
-        <!--        </classes>-->
+        <classes>
+            <class name="ios.IOSBookmarkingTest"/>
+            <class name="ios.IOSNewsFeedTest"/>
+            <class name="ios.IOSReaderModeTest"/>
+        </classes>
     </test>
     <test name="Android">
-        <packages>
-            <package name="android.*"/>
-        </packages>
+        <classes>
+            <class name="android.AndroidBookmarkingTest"/>
+            <class name="android.AndroidNewsfeedTest"/>
+            <class name="android.AndroidReaderModeTest"/>
+        </classes>
     </test>
 </suite>

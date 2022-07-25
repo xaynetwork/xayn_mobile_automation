@@ -76,9 +76,4 @@ public class ScreenshotUtils {
     public static String getResource(String path) {
         return Objects.requireNonNull(ScreenshotUtils.class.getResource(path)).getPath();
     }
-
-    public static void main(String[] args) {
-        System.out.println(getResource("/screenshots/liked.png"));
-    }
-
 }
