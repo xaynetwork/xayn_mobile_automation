@@ -39,12 +39,4 @@ public class TestRailHandler {
         List<ResultField> customResultFields = testRail.resultFields().list().execute();
         testRail.results().addForCase(run.getId(), testcase, new Result().setStatusId(status.value), customResultFields).execute();
     }
-
-
-    public static void createTestRun() {
-        log.info("TEST RAIL : CREATING TEST RUN");
-        testRail = TestRail.builder("https://" + "xain.testrail.io//", "vadim.popov@xayn.com", "BarevDzes1!").applicationName(APP).build();
-        project = new Project().setName(APP).setId(APP_ID);
-        run = testRail.runs().add(project.getId(), new Run().setSuiteId(SUITE_ID).setName("Weekly Regression " + DATE)).execute();
-    }
 }
